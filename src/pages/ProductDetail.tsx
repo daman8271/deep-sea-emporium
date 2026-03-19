@@ -122,7 +122,7 @@ const ProductDetail = () => {
           style={{ background: 'linear-gradient(135deg, #00D4FF, #0057B7)' }}
         >
           <ShoppingCart size={18} />
-          Add to Cart >>>
+          Add to Cart {'>>>'}
         </button>
       </div>
     </div>
