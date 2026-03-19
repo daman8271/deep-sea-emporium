@@ -1,0 +1,428 @@
+export type ProductCategory = 'fish' | 'aquarium' | 'equipment' | 'plant' | 'accessory' | 'food';
+
+export interface FishSpecs {
+  weight: string;
+  size: string;
+  temperature: string;
+  tankSize: string;
+  age: string;
+  diet: string;
+}
+
+export interface Product {
+  id: string;
+  name: string;
+  category: ProductCategory;
+  price: number;
+  priceLabel: string;
+  image: string;
+  tagline: string;
+  description: string;
+  badge?: 'beginner' | 'premium';
+  specs?: FishSpecs;
+  type?: string; // for plants: Real/Artificial
+}
+
+export const categories = [
+  { id: 'all', label: 'All' },
+  { id: 'fish', label: 'Fish' },
+  { id: 'aquarium', label: 'Aquariums' },
+  { id: 'equipment', label: 'Pumps & Filters' },
+  { id: 'plant', label: 'Plants' },
+  { id: 'accessory', label: 'Accessories' },
+  { id: 'food', label: 'Food' },
+];
+
+export const products: Product[] = [
+  // Fish - 19 types
+  {
+    id: 'koi-carp',
+    name: 'Koi Carp',
+    category: 'fish',
+    price: 150,
+    priceLabel: '₹150',
+    image: 'https://images.unsplash.com/photo-1520301255226-bf5f144451c1?w=400&q=80',
+    tagline: 'Colorful & hardy pond fish',
+    description: 'Koi Carp are among the most popular ornamental fish worldwide. Known for their vibrant colors and patterns, they are extremely hardy and can live for decades with proper care. Ideal for beginners and experienced hobbyists alike.',
+    badge: 'beginner',
+    specs: { weight: '200-500g', size: '15-25 cm', temperature: '15-25°C', tankSize: '30×15×15 in', age: '25-35 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'guppy',
+    name: 'Guppy',
+    category: 'fish',
+    price: 30,
+    priceLabel: '₹30',
+    image: 'https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?w=400&q=80',
+    tagline: 'Tiny, colorful & easy to keep',
+    description: 'Guppies are small, colorful freshwater fish perfect for beginners. They are livebearers and breed easily. Their vibrant tail patterns make them a favorite in community tanks.',
+    badge: 'beginner',
+    specs: { weight: '1-2g', size: '3-5 cm', temperature: '22-28°C', tankSize: '18×10×10 in', age: '2-3 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'blue-goldfish',
+    name: 'Blue Goldfish',
+    category: 'fish',
+    price: 80,
+    priceLabel: '₹80',
+    image: 'https://images.unsplash.com/photo-1524704654690-b56c05c78a00?w=400&q=80',
+    tagline: 'Elegant blue-scaled beauty',
+    description: 'The Blue Goldfish is a stunning variant with metallic blue scales. Hardy and peaceful, it thrives in both tanks and ponds. A great choice for those who want something unique yet easy to maintain.',
+    badge: 'beginner',
+    specs: { weight: '30-50g', size: '10-15 cm', temperature: '18-24°C', tankSize: '24×12×12 in', age: '10-15 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'koi-carp-coco',
+    name: 'Koi Carp Coco',
+    category: 'fish',
+    price: 200,
+    priceLabel: '₹200',
+    image: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&q=80',
+    tagline: 'Premium colored Koi variant',
+    description: 'Koi Carp Coco is a specially bred variant with rich chocolate and orange hues. Extremely popular among collectors and perfect for outdoor ponds.',
+    badge: 'beginner',
+    specs: { weight: '250-600g', size: '18-30 cm', temperature: '15-25°C', tankSize: '36×18×18 in', age: '25-35 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'catfish',
+    name: 'Catfish',
+    category: 'fish',
+    price: 60,
+    priceLabel: '₹60',
+    image: 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=400&q=80',
+    tagline: 'Bottom-dweller & tank cleaner',
+    description: 'Catfish are excellent bottom-dwelling scavengers that help keep your tank clean. They are peaceful, hardy, and get along well with most other fish species.',
+    badge: 'beginner',
+    specs: { weight: '10-30g', size: '5-12 cm', temperature: '22-28°C', tankSize: '24×12×12 in', age: '5-8 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'goldfish',
+    name: 'Goldfish',
+    category: 'fish',
+    price: 50,
+    priceLabel: '₹50',
+    image: 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=400&q=80',
+    tagline: 'Classic beginner favorite',
+    description: 'The classic Goldfish is one of the most popular aquarium fish in the world. Known for their bright orange color and friendly demeanor, they are perfect for first-time fish owners.',
+    badge: 'beginner',
+    specs: { weight: '20-40g', size: '8-15 cm', temperature: '18-24°C', tankSize: '24×12×12 in', age: '10-15 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'calico-goldfish',
+    name: 'Calico Goldfish',
+    category: 'fish',
+    price: 120,
+    priceLabel: '₹120',
+    image: 'https://images.unsplash.com/photo-1524704654690-b56c05c78a00?w=400&q=80',
+    tagline: 'Multi-colored speckled beauty',
+    description: 'Calico Goldfish feature a beautiful mix of red, orange, black, and white patches. Their unique pattern makes each one distinct. A hardy and peaceful community fish.',
+    specs: { weight: '25-45g', size: '10-15 cm', temperature: '18-24°C', tankSize: '24×12×15 in', age: '10-15 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'shubunkin-goldfish',
+    name: 'Shubunkin Goldfish',
+    category: 'fish',
+    price: 100,
+    priceLabel: '₹100',
+    image: 'https://images.unsplash.com/photo-1520301255226-bf5f144451c1?w=400&q=80',
+    tagline: 'Calico-patterned single-tail',
+    description: 'Shubunkin Goldfish are known for their calico pattern and single tail. They are active swimmers and do well in both ponds and large tanks. Hardy and adaptable.',
+    specs: { weight: '30-60g', size: '12-18 cm', temperature: '15-24°C', tankSize: '30×12×15 in', age: '15-20 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'oscar',
+    name: 'Oscar',
+    category: 'fish',
+    price: 250,
+    priceLabel: '₹250',
+    image: 'https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?w=400&q=80',
+    tagline: 'Intelligent & personality-rich',
+    description: 'Oscars are large, intelligent cichlids known for their personality. They recognize their owners and can be trained to eat from your hand. Require a large tank and experienced care.',
+    specs: { weight: '300-500g', size: '25-35 cm', temperature: '23-28°C', tankSize: '48×18×18 in', age: '10-15 years', diet: 'Carnivore' },
+  },
+  {
+    id: 'blood-parrot',
+    name: 'Blood Parrot',
+    category: 'fish',
+    price: 400,
+    priceLabel: '₹400',
+    image: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&q=80',
+    tagline: 'Vibrant red hybrid cichlid',
+    description: 'Blood Parrot Cichlids are hybrid fish known for their bright red-orange color and unique beak-like mouth. They are semi-aggressive and need a well-maintained tank.',
+    specs: { weight: '200-400g', size: '18-25 cm', temperature: '24-28°C', tankSize: '36×15×15 in', age: '10-15 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'discus',
+    name: 'Discus',
+    category: 'fish',
+    price: 800,
+    priceLabel: '₹800',
+    image: 'https://images.unsplash.com/photo-1524704654690-b56c05c78a00?w=400&q=80',
+    tagline: 'King of the aquarium',
+    description: 'Discus are often called the King of the Aquarium due to their majestic appearance and disc-shaped body. They require pristine water conditions and are best suited for experienced aquarists.',
+    specs: { weight: '150-250g', size: '15-20 cm', temperature: '28-31°C', tankSize: '36×18×18 in', age: '10-15 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'arowana',
+    name: 'Arowana',
+    category: 'fish',
+    price: 10000,
+    priceLabel: '₹10,000+',
+    image: 'https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?w=400&q=80',
+    tagline: 'The dragon fish — ultimate luxury',
+    description: 'The Arowana, also known as the Dragon Fish, is one of the most prestigious aquarium fish in the world. Believed to bring luck and prosperity, it commands respect with its large size and metallic scales.',
+    badge: 'premium',
+    specs: { weight: '2-5 kg', size: '60-90 cm', temperature: '24-30°C', tankSize: '72×24×24 in', age: '15-20 years', diet: 'Carnivore' },
+  },
+  {
+    id: 'bubble-eye-goldfish',
+    name: 'Bubble Eye Goldfish',
+    category: 'fish',
+    price: 300,
+    priceLabel: '₹300',
+    image: 'https://images.unsplash.com/photo-1520301255226-bf5f144451c1?w=400&q=80',
+    tagline: 'Unique fluid-filled eye sacs',
+    description: 'Bubble Eye Goldfish have distinctive fluid-filled sacs beneath their eyes. They are delicate and require a tank without sharp decorations. A true collector\'s fish.',
+    specs: { weight: '20-40g', size: '10-13 cm', temperature: '18-24°C', tankSize: '24×12×15 in', age: '5-10 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'angelfish',
+    name: 'Angelfish',
+    category: 'fish',
+    price: 150,
+    priceLabel: '₹150',
+    image: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&q=80',
+    tagline: 'Graceful & triangular',
+    description: 'Angelfish are elegant freshwater cichlids with tall, triangular bodies and flowing fins. They come in many color varieties and are a stunning centerpiece in any tank.',
+    specs: { weight: '20-30g', size: '12-15 cm', temperature: '24-28°C', tankSize: '30×12×18 in', age: '8-12 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'mono-fish',
+    name: 'Mono Fish',
+    category: 'fish',
+    price: 200,
+    priceLabel: '₹200',
+    image: 'https://images.unsplash.com/photo-1524704654690-b56c05c78a00?w=400&q=80',
+    tagline: 'Silver-bodied brackish beauty',
+    description: 'Mono Fish (Monodactylus) are silver-bodied fish that thrive in brackish water. They are active schooling fish that do best in groups of 4 or more.',
+    specs: { weight: '30-50g', size: '12-20 cm', temperature: '24-28°C', tankSize: '36×15×15 in', age: '5-8 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'pencil-fish',
+    name: 'Pencil Fish',
+    category: 'fish',
+    price: 80,
+    priceLabel: '₹80',
+    image: 'https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?w=400&q=80',
+    tagline: 'Slim & peaceful nano fish',
+    description: 'Pencil Fish are slender, peaceful nano fish perfect for planted tanks. They swim at an angle and add a unique dynamic to community setups.',
+    specs: { weight: '1-3g', size: '3-5 cm', temperature: '24-28°C', tankSize: '18×10×10 in', age: '3-5 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'red-tail-black-shark',
+    name: 'Red Tail Black Shark',
+    category: 'fish',
+    price: 350,
+    priceLabel: '₹350',
+    image: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&q=80',
+    tagline: 'Striking black with red tail',
+    description: 'The Red Tail Black Shark is a stunning freshwater fish with a jet-black body and vivid red tail. Semi-aggressive and territorial, they need ample space and hiding spots.',
+    specs: { weight: '15-25g', size: '10-15 cm', temperature: '22-26°C', tankSize: '36×15×15 in', age: '5-8 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'bala-shark',
+    name: 'Bala Shark / Silver Shark',
+    category: 'fish',
+    price: 300,
+    priceLabel: '₹300',
+    image: 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=400&q=80',
+    tagline: 'Elegant silver schooling fish',
+    description: 'Bala Sharks are peaceful, silver-bodied fish that can grow quite large. They are active schooling fish and need a spacious tank. Despite their name, they are not true sharks.',
+    specs: { weight: '50-100g', size: '20-30 cm', temperature: '22-28°C', tankSize: '48×18×18 in', age: '8-10 years', diet: 'Omnivore' },
+  },
+  {
+    id: 'bristlenose-pleco',
+    name: 'Bristlenose Pleco (Onkara)',
+    category: 'fish',
+    price: 180,
+    priceLabel: '₹180',
+    image: 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=400&q=80',
+    tagline: 'Algae-eating tank janitor',
+    description: 'Bristlenose Plecos are excellent algae eaters and help keep your tank clean. They are peaceful, nocturnal, and easy to care for. The bristles on their snout give them a unique appearance.',
+    specs: { weight: '20-40g', size: '10-15 cm', temperature: '20-27°C', tankSize: '24×12×12 in', age: '5-10 years', diet: 'Herbivore' },
+  },
+
+  // Aquariums
+  {
+    id: 'ready-made-aquarium',
+    name: 'Ready-made Aquarium',
+    category: 'aquarium',
+    price: 600,
+    priceLabel: '₹600',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
+    tagline: 'Plug & play starter tank',
+    description: 'A simple, ready-to-use aquarium perfect for beginners. Just add water, condition it, and introduce your fish. Compact and affordable.',
+  },
+  {
+    id: 'basic-setup',
+    name: 'Basic Setup 24×12×15',
+    category: 'aquarium',
+    price: 1500,
+    priceLabel: '₹1,500',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
+    tagline: 'Beginner recommended size',
+    description: 'A 24×12×15 inch tank with basic filtration and lighting. Perfect size for 4-6 small fish. Our most recommended setup for first-time aquarium owners.',
+    badge: 'beginner',
+  },
+  {
+    id: 'standard-setup',
+    name: 'Standard Setup 30×12×15',
+    category: 'aquarium',
+    price: 2500,
+    priceLabel: '₹2,500',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
+    tagline: 'Most popular — fits 6-8 fish',
+    description: 'Our most popular setup at 30×12×15 inches. Comes with filter, pump, gravel, and a decorative plant. Ideal for 6-8 fish comfortably.',
+  },
+  {
+    id: 'custom-aquarium',
+    name: 'Custom Aquarium',
+    category: 'aquarium',
+    price: 1500,
+    priceLabel: '₹1,500 – ₹1,00,000',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
+    tagline: 'Built to your exact specs',
+    description: 'Get a custom aquarium built to your exact dimensions and specifications. From small desk tanks to massive wall installations — we build them all. Turnaround time: ~2 days.',
+  },
+  {
+    id: 'cabinet-aquarium',
+    name: 'Cabinet Aquarium',
+    category: 'aquarium',
+    price: 0,
+    priceLabel: 'Contact for Price',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
+    tagline: 'Luxury built-in furniture style',
+    description: 'Premium cabinet-style aquariums that double as elegant furniture. Custom-built with high-quality wood and glass. Contact us for pricing based on your requirements.',
+  },
+
+  // Equipment
+  {
+    id: 'basic-pump',
+    name: 'Basic Pump',
+    category: 'equipment',
+    price: 200,
+    priceLabel: '₹200',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
+    tagline: 'Essential water circulation',
+    description: 'A reliable basic pump for small to medium aquariums. Ensures proper water circulation and oxygenation for healthy fish.',
+  },
+  {
+    id: 'standard-filter',
+    name: 'Standard Filter',
+    category: 'equipment',
+    price: 350,
+    priceLabel: '₹350',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
+    tagline: 'Crystal clear water filtration',
+    description: 'A standard filtration system that keeps your aquarium water clean and clear. Includes mechanical and biological filtration media.',
+  },
+  {
+    id: 'maintenance-service',
+    name: 'Aquarium Maintenance Service',
+    category: 'equipment',
+    price: 499,
+    priceLabel: 'From ₹499',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
+    tagline: 'Professional cleaning & health check',
+    description: 'Professional aquarium cleaning and fish health check service. Our experts will clean your tank, check water parameters, and ensure your fish are healthy.',
+  },
+
+  // Plants
+  {
+    id: 'amazon-plant',
+    name: 'Amazon Plant',
+    category: 'plant',
+    price: 120,
+    priceLabel: '₹120',
+    image: 'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=400&q=80',
+    tagline: 'Lush green live plant',
+    description: 'Amazon Sword Plant is a popular live aquarium plant that provides natural filtration and a beautiful green backdrop. Easy to grow and maintain.',
+    type: 'Real',
+  },
+  {
+    id: 'red-comba',
+    name: 'Red Comba',
+    category: 'plant',
+    price: 100,
+    priceLabel: '₹100',
+    image: 'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=400&q=80',
+    tagline: 'Vibrant red aquatic plant',
+    description: 'Red Comba is a striking red-colored aquarium plant that adds vibrant contrast to your tank. Helps with water quality and provides hiding spots for fish.',
+    type: 'Real',
+  },
+  {
+    id: 'green-comba',
+    name: 'Green Comba',
+    category: 'plant',
+    price: 90,
+    priceLabel: '₹90',
+    image: 'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=400&q=80',
+    tagline: 'Classic green aquatic plant',
+    description: 'Green Comba is a versatile and hardy aquarium plant. It grows well in most conditions and provides natural oxygen to your tank.',
+    type: 'Real',
+  },
+  {
+    id: 'decorative-plastic-plant',
+    name: 'Decorative Plastic Plant',
+    category: 'plant',
+    price: 60,
+    priceLabel: '₹60',
+    image: 'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=400&q=80',
+    tagline: 'Zero maintenance decoration',
+    description: 'High-quality artificial plant that looks realistic without any maintenance. No special lighting or CO2 required. Perfect for low-maintenance setups.',
+    type: 'Artificial',
+  },
+
+  // Accessories
+  {
+    id: 'gravel',
+    name: 'Gravel',
+    category: 'accessory',
+    price: 80,
+    priceLabel: '₹80',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
+    tagline: 'Natural tank substrate',
+    description: 'Natural gravel substrate for your aquarium. Provides a natural look and serves as a base for live plants. Available in multiple colors.',
+  },
+  {
+    id: 'decorative-toys',
+    name: 'Decorative Toys and Artifacts',
+    category: 'accessory',
+    price: 100,
+    priceLabel: '₹100+',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
+    tagline: 'Fun tank decorations',
+    description: 'Add personality to your aquarium with our range of decorative toys and artifacts. From sunken ships to treasure chests — make your underwater world unique.',
+  },
+  {
+    id: 'packaged-fish-food',
+    name: 'Packaged Fish Food',
+    category: 'food',
+    price: 99,
+    priceLabel: '₹99',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
+    tagline: 'Balanced nutrition for all fish',
+    description: 'Premium quality fish food with balanced nutrition for all freshwater fish. Contains essential vitamins and minerals for healthy growth and vibrant colors.',
+  },
+];
+
+export const getProductsByCategory = (category: string) => {
+  if (category === 'all') return products;
+  return products.filter((p) => p.category === category);
+};
+
+export const getProductById = (id: string) => products.find((p) => p.id === id);
+
+export const getFeaturedFish = () => products.filter((p) => p.category === 'fish').slice(0, 8);
+export const getFeaturedAquariums = () => products.filter((p) => p.category === 'aquarium');
+export const getFeaturedPlants = () => products.filter((p) => p.category === 'plant' || p.category === 'accessory');
